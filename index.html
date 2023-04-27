@@ -12,10 +12,10 @@
         <link rel="stylesheet" href="./assets/css/styles.css" type="text/css" />
     </head>
     <body>
-        <section>
+        <!-- <section>
             <h1>Hello World!</h1>
 
-            <!-- <button
+            <button
                 class="button is-primary js-modal-trigger"
                 data-target="recipe-modal"
             >
@@ -36,7 +36,14 @@
                         <button class="button">Cancel</button>
                     </footer>
                 </div>
-            </div> -->
+            </div>
+        </section> -->
+        <section class="entire-google-page visible pt-1">
+            <div class="zip-code-search-section is-flex">
+                <input class= "zip-code-input input is-large input is-rounded" type="text" placeholder="Enter Your Zip Code Here"><img alt= "google maps locator icon" src="./assets/images/google-maps-locator-icon.png" class= "google-maps-locator-icon"/></input>
+                <button class="searchBtn-zip-code">Search</button>
+                <div class="container-google-maps-image"></div>
+            </div>
         </section>
         <script src="./assets/js/modal.js"></script>
         <script src="./assets/js/script.js"></script>
