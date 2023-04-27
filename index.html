@@ -13,6 +13,32 @@
         <link rel="stylesheet" href="./assets/css/styles.css" type="text/css" />
     </head>
     <body>
+        <!-- <section>
+            <h1>Hello World!</h1>
+
+            <button
+                class="button is-primary js-modal-trigger"
+                data-target="recipe-modal"
+            >
+                Primary
+            </button>
+            <div class="modal" id="recipe-modal">
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                    <header class="modal-card-head">
+                        <p class="modal-card-title">Modal title</p>
+                        <button class="delete" aria-label="close"></button>
+                    </header>
+                    <section class="modal-card-body">
+                        /* Content */
+                    </section>
+                    <footer class="modal-card-foot">
+                        <button class="button is-success">Save changes</button>
+                        <button class="button">Cancel</button>
+                    </footer>
+                </div>
+            </div>
+        </section> -->
         <header>
             <div class="container is-max-desktop">
                 <h1>Recipe Patch</h1>
@@ -51,6 +77,16 @@
                 </footer>
             </div>
         </div> -->
+        <section class="entire-google-page visible pt-1 container is-max-desktop">
+            <div class="zip-code-search-section is-flex column is-full">
+                <input class= "zip-code-input input is-large input is-rounded" type="text" placeholder="Enter Your Zip Code Here"><img alt= "google maps locator icon" src="./assets/images/google-maps-locator-icon.png" class= "mx-2 google-maps-locator-icon"/></input>
+                <button class="searchBtn-zip-code">Search</button>
+                <div class="container-google-maps-image"></div>
+            </div>
+            <div class="google-maps-rendered-image box column is-two-thirds mt-3">
+
+            </div>
+        </section>
         <script src="./assets/js/modal.js"></script>
         <script src="./assets/js/script.js"></script>
     </body>
