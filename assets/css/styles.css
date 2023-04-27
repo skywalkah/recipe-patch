@@ -1,19 +1,46 @@
-.google-maps-locator-icon{
-    /* background-image: url(../images/google-maps-locator-icon.png); */
-    height:40px;
-    width:25px;
+.google-maps-locator-icon {
+    height: 40px;
+    width: 25px;
 }
 .hidden {
-    display:none;
+    display: none;
 }
 .visible {
-    display:visible;
+    display: visible;
 }
 .searchBtn-zip-code {
-    width:125px;
-    height:50px;
+    width: 125px;
+    height: 50px;
 }
-.google-maps-rendered-image{
-    height:500px;
-    background-image:url("https://www.google.com/maps/search/local+grocery+stores/@35.7990365,-78.6694144,14z/data=!3m1!4b1")
+.google-maps-rendered-image {
+    height: 500px;
+}
+.card-image figure {
+    position: relative;
+}
+.card-image figure button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+}
+.delete {
+    background: #fff;
+    height: 30px;
+    width: 30px;
+    max-height: 30px;
+    max-width: 30px;
+    min-height: 30px;
+    min-width: 30px;
+}
+.delete:hover {
+    background: #ddd;
+}
+.delete::after,
+.delete::before {
+    background-color: #444;
+}
+.modal-card-body {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
 }
