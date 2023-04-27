@@ -9,3 +9,10 @@
 .visible {
     display:visible;
 }
+.searchBtn-zip-code {
+    width:125px;
+    height:50px;
+}
+.google-maps-rendered-image{
+    height:500px;
+}
