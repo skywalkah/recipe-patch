@@ -1,3 +1,10 @@
+:root {
+    --lightGrey: #dddddd;
+    --tealGreen: #00d1b2;
+    --dark: #444444;
+    --white: #ffffff;
+}
+
 h1 {
     font-family: 'DynaPuff', cursive;
     text-align: center;
@@ -31,7 +38,7 @@ h1 {
 .loader-wrapper .loader {
     height: 80px;
     width: 80px;
-    border: 2px solid #00d1b2;
+    border: 2px solid var(--tealGreen);
     border-right-color: transparent;
     border-top-color: transparent;
 }
@@ -60,7 +67,7 @@ h1 {
     z-index: 2;
 }
 .delete {
-    background: #fff;
+    background: var(--white);
     height: 30px;
     width: 30px;
     max-height: 30px;
@@ -69,18 +76,14 @@ h1 {
     min-width: 30px;
 }
 .delete:hover {
-    background: #ddd;
+    background: var(lightGrey);
 }
 .delete::after,
 .delete::before {
-    background-color: #444;
-}
-.modal-card-body {
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
+    background-color: var(--dark);
 }
 .modal-card-body h4 {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(lightGrey);
 }
 .modal-card-body ul {
     list-style: none;
@@ -90,7 +93,7 @@ h1 {
 }
 .modal-card-body ul li::before {
     content: '\2022';
-    color: #00d1b2;
+    color: var(--tealGreen);
     font-weight: bold;
     display: inline-block;
     width: 1em;
