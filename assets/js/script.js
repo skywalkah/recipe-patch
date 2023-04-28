@@ -106,7 +106,7 @@ var displayRecipes = function (data) {
                         <h3>${recipeName}</h3>
                         <h4 class="pb-3">Ingredients</h4>
                         <ul>
-                            ${Array.from(ingredientList.children).map(li => `<li>${li.textContent}</li>`).join('')}
+                            ${Array.from(ingredientList.children).map(li => `<li class='ingredient-item'>${li.textContent}</li>`).join('')}
                         </ul>
                         <p><a href="${recipeUrl}" target="_blank">Recipe source for steps.</a></p>
                         <button class="button is-success" id="addToGroceryBtn">Add ingredients to grocery list</button>
