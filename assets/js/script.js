@@ -19,7 +19,7 @@ getRecipesBtn.addEventListener('click', function (event) {
 
 function getRecipes(i) {
     // EDAMAM's API url
-    apiUrl = 'https://api.edamam.com/api/recipes/v2?type=public&q=' + i + '&app_id=' + appID + '&app_key=' + apiKey + '&imageSize=LARGE&field=label&field=image&field=url&field=ingredientLines';
+    const apiUrl = 'https://api.edamam.com/api/recipes/v2?type=public&q=' + i + '&app_id=' + appID + '&app_key=' + apiKey + '&imageSize=LARGE&field=label&field=image&field=url&field=ingredientLines';
 
     // Lets fetch the data from EDAMAM's API
     fetch(apiUrl)
@@ -52,6 +52,7 @@ var displayRecipes = function (data) {
         const recipeName = data.hits[i].recipe.label;
         // The url for the recipe
         const recipeUrl = data.hits[i].recipe.url;
+        console.log(recipeUrl);
         // The ingredients for the recipe
         const recipeIngredients = data.hits[i].recipe.ingredientLines;
         // The unique ID for the recipe so that we can use the modal on each one
@@ -73,7 +74,9 @@ var displayRecipes = function (data) {
             <div class="card mb-5">
                 <div class="card-image">
                     <figure class="image is-4by3">
-                        <img src="${imagePath}" alt="${recipeName}">
+                        <a class="js-modal-trigger" data-target="${recipeID}">
+                            <img src="${imagePath}" alt="${recipeName}">
+                        </a>
                     </figure>
                 </div>
                 <div class="card-content">
@@ -94,16 +97,18 @@ var displayRecipes = function (data) {
                     <div class="card-image">
                         <figure class="image is-4by3">
                             <button class="delete" aria-label="close"></button>
-                            <a href="${recipeUrl} target="_blank">
+                            <a href="${recipeUrl}" target="_blank">
                                 <img src="${imagePath}" alt="${recipeName}">
                             </a>
                         </figure>
                     </div>
                     <section class="modal-card-body content">
                         <h3>${recipeName}</h3>
+                        <h4 class="pb-3">Ingredients</h4>
                         <ul>
-                            ${Array.from(ingredientList.children).map(li => `<li>${li.textContent}</li>`).join('')}
+                            ${Array.from(ingredientList.children).map(li => `<li class='ingredient-item'>${li.textContent}</li>`).join('')}
                         </ul>
+                        <p><a href="${recipeUrl}" target="_blank">Recipe source for steps.</a></p>
                         <button class="button is-success" id="addToGroceryBtn">Add ingredients to grocery list</button>
                     </section>
                 </div>
