@@ -114,5 +114,6 @@ var displayRecipes = function (data) {
         // We can call the call the setupModals function now that the recipes are on the page,
         // to add the event listeners to the modal
         setupModals();
+        googleScript();
     }
 }
