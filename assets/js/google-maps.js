@@ -1,6 +1,6 @@
 var googleScript = function () {
 
-    let addToGroceryBtn = document.querySelector("#addToGroceryBtn");
+    let addToGroceryBtns = Array.from(document.querySelectorAll("#addToGroceryBtn"));
 
     function createFetchInputs(event) {
         event.preventDefault();
@@ -49,9 +49,11 @@ var googleScript = function () {
         //append div to the aside
         document.querySelector(".shopping-list-aside").appendChild(googleMapsSearchArea);
         document.querySelector(".searchBtn-googlemaps").addEventListener("click", createFetchInputs);
+        closeModal();
     }
-    addToGroceryBtn.addEventListener("click", addIngShoppingList);
-    console.log("google script is running");
+    addToGroceryBtns.forEach(function (addToGroceryBtn) {
+        addToGroceryBtn.addEventListener("click", addIngShoppingList);
+    });
 
 }
 

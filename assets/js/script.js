@@ -52,7 +52,6 @@ var displayRecipes = function (data) {
         const recipeName = data.hits[i].recipe.label;
         // The url for the recipe
         const recipeUrl = data.hits[i].recipe.url;
-        console.log(recipeUrl);
         // The ingredients for the recipe
         const recipeIngredients = data.hits[i].recipe.ingredientLines;
         // The unique ID for the recipe so that we can use the modal on each one
@@ -121,4 +120,13 @@ var displayRecipes = function (data) {
         setupModals();
         googleScript();
     }
+}
+
+// Global function to close all modals
+var closeModal = function () {
+    const elements = document.querySelectorAll('*');
+
+    elements.forEach((element) => {
+        element.classList.remove('is-active');
+    });
 }
