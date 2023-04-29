@@ -118,8 +118,9 @@ var displayRecipes = function (data) {
         // We can call the call the setupModals function now that the recipes are on the page,
         // to add the event listeners to the modal
         setupModals();
-        googleScript();
     }
+    //render the ingredients
+    renderIngredScript();
 }
 
 // Global function to close all modals
@@ -130,3 +131,7 @@ var closeModal = function () {
         element.classList.remove('is-active');
     });
 }
+//load the ingredients and google scripts
+renderIngredScript();
+googleScript();
+
