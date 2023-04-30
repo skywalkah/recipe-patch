@@ -18,17 +18,19 @@ function renderIngredScript(){
             shoppingListItem.setAttribute("data-index", i);
             //create the delete Btn
             let deleteBtn = document.createElement("button");
-            deleteBtn.classList.add("delete", "is-medium");
+            deleteBtn.classList.add("delete", "is-medium", "delete-single-item");
             deleteBtn.setAttribute("data-index", i)
             //append items to DOM
             shoppingListItem.appendChild(deleteBtn);
             document.querySelector(".shopping-list-area").append(shoppingListItem);
         }
         //create start over button
-        let startOverBtn = document.createElement("button");
+        if(igs.length !== 0){
+            let startOverBtn = document.createElement("button");
             startOverBtn.textContent = "Start Over";
             startOverBtn.classList.add("button", "start-overBtn", "is-primary", "mt-2");
             document.querySelector(".shopping-list-area").append(startOverBtn);
+        }
     }
     function IngShoppingList() {
         //this grabs the ingredients from the recipe in the DOM
@@ -60,8 +62,8 @@ function renderIngredScript(){
     }
     function removeShoppingListItem(event){
         let element = event.target;
-        //if element clicked on is a button - SEE IF WE CAN IDENIFY BY CLASS INSTEAD
-        if (element.matches("button") === true){
+        //if element clicked on is delete button
+        if (element.classList.contains("delete-single-item") === true){
             //get the parent's attribute
             var index = element.parentElement.getAttribute("data-index");
             //cut the value out of the array
