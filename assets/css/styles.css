@@ -1,38 +1,23 @@
-<<<<<<< HEAD
-.google-maps-locator-icon{
-    /* background-image: url(../images/google-maps-locator-icon.png); */
-    height:40px;
-    width:25px;
-}
-.hidden {
-    display:none;
-}
-.visible {
-    display:visible;
-}
-.searchBtn-zip-code {
-    width:125px;
-    height:50px;
-}
-.google-maps-rendered-image{
-    height:500px;
-=======
 :root {
     --lightGrey: #dddddd;
     --tealGreen: #00d1b2;
     --dark: #444444;
     --white: #ffffff;
 }
+
 h1 {
     font-family: 'DynaPuff', cursive;
     text-align: center;
 }
+
 .hidden {
     display: none;
 }
+
 .visible {
     display: visible;
 }
+
 .loader-wrapper {
     height: 100%;
     width: 100%;
@@ -42,6 +27,7 @@ h1 {
     align-items: center;
     border-radius: 6px;
 }
+
 .loader-wrapper .loader {
     height: 80px;
     width: 80px;
@@ -49,30 +35,36 @@ h1 {
     border-right-color: transparent;
     border-top-color: transparent;
 }
+
 .loader-wrapper.is-active {
     opacity: 1;
     z-index: 1;
 }
+
 .modal-card {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
+
 .modal-card .card-image {
     max-height: 400px;
     overflow: hidden;
     margin-top: -50px;
 }
+
 .modal-card .card-image figure {
     position: relative;
 }
+
 .modal-card .card-image figure button {
     position: absolute;
     top: 70px;
     right: 20px;
     z-index: 2;
 }
+
 .delete {
     background: var(--white);
     height: 30px;
@@ -82,22 +74,27 @@ h1 {
     min-height: 30px;
     min-width: 30px;
 }
+
 .delete:hover {
     background: var(lightGrey);
 }
-.delete::after,
-.delete::before {
+
+.delete::after, .delete::before {
     background-color: var(--dark);
 }
+
 .modal-card-body h4 {
     border-bottom: 1px solid var(lightGrey);
 }
+
 .modal-card-body ul {
     list-style: none;
 }
+
 .modal-card-body.content ul {
     margin-left: 1em;
 }
+
 .modal-card-body ul li::before {
     content: '\2022';
     color: var(--tealGreen);
@@ -107,14 +104,16 @@ h1 {
     margin-left: -0.8em;
     font-size: 1.25em;
 }
+
 .shopping-list-area, .shopping-list-item, .content-ul {
-    list-style-type:none;
+    list-style-type: none;
     margin-left: 0px;
 }
-.shopping-list-item::before{
+
+.shopping-list-item::before {
     content: "✧ "
 }
-.searchBtn-googlemaps, .start-overBtn{
-    width:100%;
->>>>>>> e305c182bdda97e7409df9b6966f885099f94843
+
+.searchBtn-googlemaps, .start-overBtn {
+    width: 100%;
 }
