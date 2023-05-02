@@ -14,7 +14,7 @@ To be determined
 
 ## Credits
 
-N/A
+Logo .svg image: [The Noun Project](https://thenounproject.com/icon/vegetables-1422990/), [Wikimedia](https://meta.wikimedia.org/wiki/File:Noun_Project_vegetables_icon_1422990_cc.svg)
 
 ## License
 
