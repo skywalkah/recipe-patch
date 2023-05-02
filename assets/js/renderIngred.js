@@ -9,7 +9,7 @@ function renderIngredScript() {
     //this function creates the shopping list items with input of ingredients
     function createShoppingListItems(igs) {
         //clear the shopping list area
-        document.querySelector('.shopping-list-area').innerHTML = '';
+        shoppingUL.innerHTML = '';
         //create shopping list items
         for (var i = 0; i < igs.length; i++) {
             //create the li
@@ -31,9 +31,7 @@ function renderIngredScript() {
             deleteBtn.setAttribute('data-index', i);
             //append items to DOM
             shoppingListItem.appendChild(deleteBtn);
-            document
-                .querySelector('.shopping-list-area')
-                .append(shoppingListItem);
+            shoppingUL.append(shoppingListItem);
         }
         //create start over button
         if (igs.length !== 0) {
@@ -49,14 +47,14 @@ function renderIngredScript() {
                 'mt-2'
             );
             // Append the button to the shopping list area
-            document.querySelector('.shopping-list-area').append(startOverBtn);
+            shoppingUL.append(startOverBtn);
             // Start over button event listener
             startOverBtn.addEventListener('click', function (event) {
                 event.preventDefault();
                 // We clear localstorage
                 localStorage.clear();
                 // We empty the shopping list
-                shoppingUL.innerHTML = '';
+                shoppingUL.innerHTML = 'Your grocery list is empty.';
             });
         }
     }
@@ -96,6 +94,7 @@ function renderIngredScript() {
     //event listener for the "add ingredients to shopping list" buttons
     addToGroceryBtns.forEach(function (addToGroceryBtn) {
         addToGroceryBtn.addEventListener('click', function (e) {
+            ingredientArray = [];
             const thisIngredients =
                 e.target.previousElementSibling.previousElementSibling;
             const ingredientListItems =
@@ -122,10 +121,8 @@ function renderIngredScript() {
         });
     });
 
-    //event listener for the shopping list to listen for deleteing shopping list items
-    document
-        .querySelector('.shopping-list-area')
-        .addEventListener('click', removeShoppingListItem);
+    //event listener for the shopping list to listen for deleting shopping list items
+    shoppingUL.addEventListener('click', removeShoppingListItem);
 
     //do this first
     readIngredientsFromStorage();

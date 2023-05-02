@@ -8,6 +8,23 @@ h1 {
     font-family: 'DynaPuff', cursive;
     text-align: center;
 }
+h1::before {
+    display: inline-block;
+    content: ' ';
+    background-image: url('../images/recipe-patch-logo.svg');
+    background-size: 80px 80px;
+    width: 80px;
+    height: 80px;
+    margin-bottom: -18px;
+}
+@media all and (max-width: 768px) {
+    h1::before {
+        background-size: 60px 60px;
+        width: 60px;
+        height: 60px;
+        margin-bottom: -14px;
+    }
+}
 .hidden {
     display: none;
 }
