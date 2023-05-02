@@ -88,13 +88,29 @@ h1 {
     margin-left: -0.8em;
     font-size: 1.25em;
 }
-.shopping-list-area, .shopping-list-item, .content-ul {
-    list-style-type:none;
+ul.shopping-list-area {
+    margin: 0;
+}
+ul.shopping-list-area li:not(:last-child) {
+    position: relative;
+    padding-right: 30px;
+    margin-bottom: 1em;
+}
+ul.shopping-list-area li button {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.shopping-list-area,
+.shopping-list-item,
+.content-ul {
+    list-style-type: none;
     margin-left: 0px;
 }
-.shopping-list-item::before{
-    content: "✧ "
+.shopping-list-item::before {
+    content: '✧ ';
 }
-.searchBtn-googlemaps, .start-overBtn{
-    width:100%;
+.searchBtn-googlemaps,
+.start-overBtn {
+    width: 100%;
 }
