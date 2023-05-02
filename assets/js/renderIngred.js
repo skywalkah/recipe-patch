@@ -5,7 +5,6 @@ function renderIngredScript() {
         document.querySelectorAll('#addToGroceryBtn')
     );
     let ingredientArray = JSON.parse(localStorage.getItem('ingredients')) || [];
-    let startOverBtn = document.querySelector('.start-overBtn');
     let shoppingUL = document.querySelector('.shopping-list-area');
     //this function creates the shopping list items with input of ingredients
     function createShoppingListItems(igs) {
@@ -38,18 +37,25 @@ function renderIngredScript() {
         }
         //create start over button
         if (igs.length !== 0) {
+            // Create a button element
             let startOverBtn = document.createElement('button');
+            // Add text to the button
             startOverBtn.textContent = 'Start Over';
+            // Add classes to the button
             startOverBtn.classList.add(
                 'button',
                 'start-overBtn',
                 'is-primary',
                 'mt-2'
             );
+            // Append the button to the shopping list area
             document.querySelector('.shopping-list-area').append(startOverBtn);
+            // Start over button event listener
             startOverBtn.addEventListener('click', function (event) {
                 event.preventDefault();
+                // We clear localstorage
                 localStorage.clear();
+                // We empty the shopping list
                 shoppingUL.innerHTML = '';
             });
         }
@@ -111,6 +117,8 @@ function renderIngredScript() {
             );
             //this closes the modal
             closeModal();
+            //this scrolls to the top of the page
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     });
 
