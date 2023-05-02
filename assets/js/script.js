@@ -28,6 +28,7 @@ function getRecipes(i) {
                 response.json()
                     .then(function (data) {
                         displayRecipes(data);
+                        renderIngredScript();
                     });
             }
         })
@@ -119,8 +120,6 @@ var displayRecipes = function (data) {
         // to add the event listeners to the modal
         setupModals();
     }
-    //render the ingredients
-    renderIngredScript();
 }
 
 // Global function to close all modals
