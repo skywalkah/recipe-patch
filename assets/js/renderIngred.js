@@ -1,40 +1,63 @@
 //this is a script for rendering the ingredients
 function renderIngredScript() {
     //define variables
-    let addToGroceryBtns = Array.from(document.querySelectorAll("#addToGroceryBtn"));
-    let ingredientArray = JSON.parse(localStorage.getItem("ingredients")) || [];
-
+    let addToGroceryBtns = Array.from(
+        document.querySelectorAll('#addToGroceryBtn')
+    );
+    let ingredientArray = JSON.parse(localStorage.getItem('ingredients')) || [];
+    let startOverBtn = document.querySelector('.start-overBtn');
+    let shoppingUL = document.querySelector('.shopping-list-area');
     //this function creates the shopping list items with input of ingredients
     function createShoppingListItems(igs) {
         //clear the shopping list area
-        document.querySelector(".shopping-list-area").innerHTML = '';
+        document.querySelector('.shopping-list-area').innerHTML = '';
         //create shopping list items
         for (var i = 0; i < igs.length; i++) {
             //create the li
-            let shoppingListItem = document.createElement("li");
-            shoppingListItem.classList.add("shopping-list-item", "block", "is-size-6");
+            let shoppingListItem = document.createElement('li');
+            shoppingListItem.classList.add(
+                'shopping-list-item',
+                'block',
+                'is-size-6'
+            );
             shoppingListItem.textContent = igs[i];
-            shoppingListItem.setAttribute("data-index", i);
+            shoppingListItem.setAttribute('data-index', i);
             //create the delete Btn
-            let deleteBtn = document.createElement("button");
-            deleteBtn.classList.add("delete", "is-medium", "delete-single-item");
-            deleteBtn.setAttribute("data-index", i)
+            let deleteBtn = document.createElement('button');
+            deleteBtn.classList.add(
+                'delete',
+                'is-medium',
+                'delete-single-item'
+            );
+            deleteBtn.setAttribute('data-index', i);
             //append items to DOM
             shoppingListItem.appendChild(deleteBtn);
-            document.querySelector(".shopping-list-area").append(shoppingListItem);
+            document
+                .querySelector('.shopping-list-area')
+                .append(shoppingListItem);
         }
         //create start over button
         if (igs.length !== 0) {
-            let startOverBtn = document.createElement("button");
-            startOverBtn.textContent = "Start Over";
-            startOverBtn.classList.add("button", "start-overBtn", "is-primary", "mt-2");
-            document.querySelector(".shopping-list-area").append(startOverBtn);
+            let startOverBtn = document.createElement('button');
+            startOverBtn.textContent = 'Start Over';
+            startOverBtn.classList.add(
+                'button',
+                'start-overBtn',
+                'is-primary',
+                'mt-2'
+            );
+            document.querySelector('.shopping-list-area').append(startOverBtn);
+            startOverBtn.addEventListener('click', function (event) {
+                event.preventDefault();
+                localStorage.clear();
+                shoppingUL.innerHTML = '';
+            });
         }
     }
 
     function readIngredientsFromStorage() {
         //this gets the ingred from local storage
-        let ingredientArray = localStorage.getItem("ingredients");
+        let ingredientArray = localStorage.getItem('ingredients');
         //if ingreds exist, parse it
         if (ingredientArray) {
             ingredientArray = JSON.parse(ingredientArray);
@@ -49,13 +72,16 @@ function renderIngredScript() {
     function removeShoppingListItem(event) {
         let element = event.target;
         //if element clicked on is delete button
-        if (element.classList.contains("delete-single-item") === true) {
+        if (element.classList.contains('delete-single-item') === true) {
             //get the parent's attribute
-            var index = element.parentElement.getAttribute("data-index");
+            var index = element.parentElement.getAttribute('data-index');
             //cut the value out of the array
             ingredientArray.splice(index, 1);
             //set local storage to new array
-            localStorage.setItem("ingredients", JSON.stringify(ingredientArray));
+            localStorage.setItem(
+                'ingredients',
+                JSON.stringify(ingredientArray)
+            );
             //create list items
             createShoppingListItems(ingredientArray);
         }
@@ -63,29 +89,35 @@ function renderIngredScript() {
 
     //event listener for the "add ingredients to shopping list" buttons
     addToGroceryBtns.forEach(function (addToGroceryBtn) {
-        addToGroceryBtn.addEventListener("click", function (e) {
-            const thisIngredients = e.target.previousElementSibling.previousElementSibling;
-            const ingredientListItems = thisIngredients.querySelectorAll(".ingredient-item");
-            console.log(ingredientListItems);
-            // We clear the local storage
-            localStorage.clear();
-            //this grabs the ingredients from the recipe in the DOM
-            ingredientListItems.forEach(function (currentListItem) {
-
-                //pushes each value into the ingredientArray
-                ingredientArray.push(currentListItem.textContent);
-            })
+        addToGroceryBtn.addEventListener('click', function (e) {
+            const thisIngredients =
+                e.target.previousElementSibling.previousElementSibling;
+            const ingredientListItems =
+                thisIngredients.querySelectorAll('.ingredient-item');
+            -(
+                //this grabs the ingredients from the recipe in the DOM
+                ingredientListItems.forEach(function (currentListItem) {
+                    //pushes each value into the ingredientArray
+                    ingredientArray.push(currentListItem.textContent);
+                })
+            );
             //this sends the ingredientArray to be created in the createShoppingListItems function
             createShoppingListItems(ingredientArray);
             // console.log(ingredientArray);
             //this sets the local storage to the new array
-            localStorage.setItem("ingredients", JSON.stringify(ingredientArray))
+            localStorage.setItem(
+                'ingredients',
+                JSON.stringify(ingredientArray)
+            );
             //this closes the modal
             closeModal();
         });
     });
+
     //event listener for the shopping list to listen for deleteing shopping list items
-    document.querySelector(".shopping-list-area").addEventListener("click", removeShoppingListItem);
+    document
+        .querySelector('.shopping-list-area')
+        .addEventListener('click', removeShoppingListItem);
 
     //do this first
     readIngredientsFromStorage();
