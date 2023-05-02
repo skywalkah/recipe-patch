@@ -5,12 +5,82 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Recipe Patch</title>
         <link rel="stylesheet" href="./assets/css/reset.css" type="text/css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@700&display=swap"
+            rel="stylesheet"
+        />
         <link rel="stylesheet" href="./assets/css/styles.css" type="text/css" />
     </head>
-    <body>
-        <section>
-            <h1>Hello World!</h1>
-        </section>
+    <body class="has-background-light">
+        <header>
+            <div class="container is-max-desktop">
+                <h1 class="is-size-1 py-5 has-text-primary">Recipe Patch</h1>
+            </div>
+        </header>
+
+        <main class="container is-max-desktop px-5">
+            <div class="columns">
+                <div class="column is-full">
+                    <div class="field is-grouped">
+                        <p class="control is-expanded">
+                            <input
+                                class="input ingredient-input is-medium"
+                                type="text"
+                                placeholder="Find a recipe"
+                            />
+                        </p>
+                        <p class="control">
+                            <button
+                                class="button is-primary search-recipe-btn is-medium"
+                            >
+                                Search
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
+                <section class="column is-two-third recipes-container">
+                    <h2 class="is-size-4">
+                        Such empty... search for something yum
+                    </h2>
+                </section>
+                <aside
+                    class="box column is-one-third mx-3 my-3 shopping-list-aside content"
+                >
+                    <h5>Shopping List</h5>
+                    <ul class="shopping-list-area">
+                        Nothing here yet!
+                    </ul>
+                    <hr />
+                    <div
+                        class="google-maps-search-area field has addons is-flex-direction-column align-content-center"
+                    >
+                        <h5>Find your local grocery store!</h5>
+                        <input
+                            class="input google-maps-search-input"
+                            type="text"
+                            placeholder="Enter your city here."
+                        />
+                        <button
+                            class="button searchBtn-googlemaps is-primary mt-2"
+                        >
+                            Let's Go Shopping!
+                        </button>
+                    </div>
+                </aside>
+            </div>
+        </main>
+
+        <script src="./assets/js/modal.js"></script>
+        <script src="./assets/js/google-maps.js"></script>
+        <script src="./assets/js/renderIngred.js"></script>
         <script src="./assets/js/script.js"></script>
     </body>
 </html>
