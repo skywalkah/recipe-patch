@@ -1,0 +1,104 @@
+
+<!-- saved from url=(0051)http://127.0.0.1:5500/index.html?searchRecipe=pesto -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Recipe Patch</title>
+        <link rel="stylesheet" href="./Recipe Patch_files/reset.css" type="text/css">
+        <link rel="stylesheet" href="./Recipe Patch_files/bulma.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+        <link href="./Recipe Patch_files/css2" rel="stylesheet">
+        <link rel="stylesheet" href="./Recipe Patch_files/styles.css" type="text/css">
+    </head>
+    <body class="has-background-light">
+        <header>
+            <div class="container is-max-desktop">
+                <h1 class="is-size-1 is-size-3-mobile py-5 has-text-primary">
+                    Recipe Patch
+                </h1>
+            </div>
+        </header>
+
+        <main class="container is-max-desktop px-5">
+            <div class="columns">
+                <div class="column is-full">
+                    <div class="field is-grouped">
+                        <p class="control is-expanded">
+                            <input class="input ingredient-input is-medium" type="text" placeholder="Find a recipe" id="searchRecipe">
+                        </p>
+                        <p class="control">
+                            <button class="button is-primary search-recipe-btn is-medium">
+                                Search
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="columns main-grid">
+                <section class="column is-two-third recipes-container">
+                    <h2 class="is-size-4">
+                        Such empty... search for something yum
+                    </h2>
+                </section>
+                <aside class="box column is-one-third mx-3 my-3 shopping-list-aside content">
+                    <h5>Grocery List</h5>
+                    <ul class="shopping-list-area">Your grocery list is empty.</ul>
+                    <hr>
+                    <div class="google-maps-search-area field has addons is-flex-direction-column align-content-center">
+                        <h5>Find your local grocery store!</h5>
+                        <input class="input google-maps-search-input" type="text" placeholder="Enter your city here.">
+                        <button class="button searchBtn-googlemaps is-primary mt-2">
+                            Let's Go Shopping!
+                        </button>
+                    </div>
+                </aside>
+            </div>
+        </main>
+
+        <script src="./Recipe Patch_files/modal.js"></script>
+        <script src="./Recipe Patch_files/google-maps.js"></script>
+        <script src="./Recipe Patch_files/renderIngred.js"></script>
+        <script src="./Recipe Patch_files/script.js"></script>
+    <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>
