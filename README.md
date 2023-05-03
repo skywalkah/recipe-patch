@@ -2,7 +2,11 @@
 
 ## Description
 
-Search for recipes based on a specific cuisine or ingredients. Once you like a recipe, add the ingredients to a shopping list and get directions to the nearest grocery store.
+Introducing recipe patch, the ultimate resource for food lovers and cooks.
+
+We help you discover new and delicious recipes, and make the cooking process easier by providing recommendations where to find the ingredients you will need and a shopping list to keep track of those ingredients.
+
+Whether you're a seasoned chef or a novice in the kitchen, recipe patch is your go-to app for inspiration and convenience.
 
 ## Installation
 
@@ -10,7 +14,20 @@ N/A
 
 ## Usage
 
-To be determined
+Visit the site [here](https://skywalkah.github.io/recipe-patch/). And follow these steps:
+
+1. Search for a recipe by typing the name of it or an ingredient, click "Search" or press "Enter".
+2. Look through recipes and find one you like. Click the "View recipe" button.
+3. Scroll to the bottom and click the "Add Ingredients to grocery list" button.
+4. The ingredients were added to the Grocery list on the top. You can now delete some of them, start over, or enter your city and find your nearest grocery store.
+5. Go shopping!
+
+## What it should look like
+
+![A screenshot of the desktop view](assets/images/screen1.png)
+![A screenshot of the desktop view](assets/images/screen2.png)
+![A screenshot of the desktop view](assets/images/screen3.png)
+![A screenshot of the desktop view](assets/images/screen4.png)
 
 ## Credits
 
