@@ -33,6 +33,12 @@ Visit the site [here](https://skywalkah.github.io/recipe-patch/). And follow the
 
 Logo .svg image: [The Noun Project](https://thenounproject.com/icon/vegetables-1422990/), [Wikimedia](https://meta.wikimedia.org/wiki/File:Noun_Project_vegetables_icon_1422990_cc.svg)
 
+Devs: [anicrob](https://github.com/anicrob) [myflash1990](https://github.com/myflash1990) [Roadglide131](https://github.com/Roadglide131) [skywalkah](https://github.com/skywalkah)
+
+Framework: [Bulma](https://bulma.io/)
+
+APIs: [Edaman](https://www.edamam.com/) [Geoapify](https://www.geoapify.com/)
+
 ## License
 
 MIT license - Please refer to the LICENSE in the repo for more info.
